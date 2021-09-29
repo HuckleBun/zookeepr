@@ -7,7 +7,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
-<<<<<<< HEAD
 const { animals } = require("./data/animals");
 
 
@@ -102,13 +101,12 @@ app.get("/api/animals/:id", (req, res) => {
   }
 })
 
-<<<<<<< HEAD
 app.post("/api/animals", (req, res) => {
     // req.body is where our incoming content will be
     console.log(req.body);
     res.json(req.body);
 })
-=======
+
 app.post('/api/animals', (req, res) => {
   // req.body is where our incoming content will be
   // set id based on what the next index of the array will be
@@ -121,12 +119,11 @@ app.post('/api/animals', (req, res) => {
     res.json(animal);
   }
 });
->>>>>>> 77d318fbc16377ab938cb7848d59775e3bd0eed5
-=======
+
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 app.use(express.static('public'));
->>>>>>> 97c64e35af9328831fd0d4582531b71a465793b8
+
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`)
