@@ -1,12 +1,13 @@
 const express = require("express");
-const fs = require("fs");
-const path = require("path");
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 const PORT = process.env.PORT || 3001;
 const app = express();
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+<<<<<<< HEAD
 const { animals } = require("./data/animals");
 
 
@@ -121,6 +122,11 @@ app.post('/api/animals', (req, res) => {
   }
 });
 >>>>>>> 77d318fbc16377ab938cb7848d59775e3bd0eed5
+=======
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+app.use(express.static('public'));
+>>>>>>> 97c64e35af9328831fd0d4582531b71a465793b8
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`)
